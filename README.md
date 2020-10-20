@@ -7,10 +7,10 @@
 | nickname               | string  | null: false               |
 | email                  | string  | null: false, unique: true |
 | password               | string  | null: false               |
-| first_name(full_width) | string  | null: false               |
-| last_name(full_width)  | string  | null: false               |
-| first_name(half_width) | string  | null: false               |
-| last_name(half_width)  | string  | null: false               |
+| first_name             | string  | null: false               |
+| last_name              | string  | null: false               |
+| first_name_kana        | string  | null: false               |
+| last_name_kana         | string  | null: false               |
 | birth_day              | date    | null: false               |
 
 ### Association
@@ -56,7 +56,7 @@
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| buyer_user | references | null: false, foreign_key: true |
+| user       | references | null: false, foreign_key: true |
 | item       | references | null: false, foreign_key: true |
 
 ### Association
