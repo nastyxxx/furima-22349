@@ -19,7 +19,7 @@
 
 - has_many :items
 - has_many :comments, dependent: :destroy
-- has_one :deliver_address, dependent: :destroy
+- has_one  :deliver_address, dependent: :destroy
 - has_many :orders, dependent: :destroy
 
 ## items table
@@ -39,8 +39,8 @@
 ### Association
 
 - belongs_to :user
-- has_many :comments, dependent: :destroy
-- has_one : order
+- has_many   :comments, dependent: :destroy
+- has_one    : order
 
 ## comments table
 
@@ -67,7 +67,7 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :deliver_address
+- has_one    :deliver_address
 
 ## deliver_addresses table
 
@@ -85,4 +85,4 @@
 ### Association
 
 - belongs_to :user
-- belongs_to : order
+- belongs_to :order
