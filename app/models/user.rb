@@ -9,7 +9,7 @@ class User < ApplicationRecord
     message: 'Include both letters and numbers'
   }
   with_options presence: true do
-    validates :nickname
+    validates :nickname, :birth_day
     with_options format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters' } do
       validates :first_name 
       validates :last_name 
@@ -18,6 +18,5 @@ class User < ApplicationRecord
       validates :first_name_kana 
       validates :last_name_kana 
     end
-    validates :birth_day
   end
 end
