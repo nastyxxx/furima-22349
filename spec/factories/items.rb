@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :item do
     name { Faker::Lorem.word }
     text { Faker::Lorem.sentence }
-    price { rand(300..9999999) }
+    price { rand(300..9_999_999) }
     association :user
     association :category
     association :condition
