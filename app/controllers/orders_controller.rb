@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
   end
 
   def move_to_home
-    redirect_to root_path if current_user.id == @item.user_id || @item.order.valid?
+    redirect_to root_path if current_user.id == @item.user_id || @item.order
   end
 
   def pay_item
