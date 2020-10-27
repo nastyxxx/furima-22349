@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_item
   before_action :authenticate_user!
-  before_action :move_to_show
+  before_action :move_to_home
 
   def index
     @item_order = ItemOrder.new
@@ -30,8 +30,8 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
-  def move_to_show
-    redirect_to root_path if current_user.id == @item.user_id
+  def move_to_home
+    redirect_to root_path if current_user.id == @item.user_id || @item.order.valid?
   end
 
   def pay_item
