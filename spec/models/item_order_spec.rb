@@ -67,5 +67,11 @@ RSpec.describe ItemOrder, type: :model do
       @item_order.valid?
       expect(@item_order.errors.full_messages).to include('Phone number Input only half-width number')
     end
+
+    it 'tokenが空では登録できないこと' do
+      @item_order.token = nil
+      @item_order.valid?
+      expect(@item_order.errors.full_messages).to include("Token can't be blank")
+    end
   end
 end
